@@ -1,1 +1,1 @@
-export { default as RestaurantList } from './ListContainer'
+export * from './view'

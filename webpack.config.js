@@ -34,10 +34,12 @@ module.exports = {
             library: { type: "var", name: "Restaurant" },
             filename: "remoteEntry.js", //bundle
             exposes: { //외부연결
-                "./List": "./src/Restaurant/List/ListContainer", //index name
-                "./Detail": "./src/Restaurant/Detail/DetailContainer"
+                "./Restaurant": "./src/Restaurant/index",
+                "./List": "./src/Restaurant/List/view/ListContainer", //index name
+                "./Detail": "./src/Restaurant/Detail/view/DetailContainer",//
+                './Sample' : "./src/Restaurant/Detail/store/DetailKeeper",
+                './Sample1' : "./src/Restaurant/Detail/store/Sample"
             },
-            // shared: ['react', 'react-dom'],
             shared: {
                 ...deps,
                 "react": { singleton: true ,strictVersion:true,eager:true},

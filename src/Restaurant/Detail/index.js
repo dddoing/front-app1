@@ -1,1 +1,2 @@
-export { default as RestaurantDetail } from './DetailContainer'
+export * from './view'
+export * from './store'
