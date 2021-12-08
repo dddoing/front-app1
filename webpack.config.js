@@ -11,10 +11,10 @@ module.exports = {
         static: {
             directory: path.join(__dirname, "dist"),
         },
-        port: 3002,
+        port: 3001,
     },
     output: {
-        publicPath: "http://localhost:3002/", //
+        publicPath: "http://localhost:3001/", //
     },
     module: {
         rules: [
