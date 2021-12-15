@@ -16,14 +16,17 @@ module.exports = {
     output: {
         publicPath: "http://localhost:3001/", //
     },
+    resolve: {
+        extensions: [".ts", ".tsx", ".js"]
+    },
     module: {
         rules: [
             {
-                test: /\.jsx?$/,
+                test: /\.tsx?$/,
                 loader: "babel-loader",
                 exclude: /node_modules/,
                 options: {
-                    presets: ["@babel/preset-react"],
+                    presets: ["@babel/preset-react","@babel/preset-typescript"],
                 },
             },
         ],
@@ -34,11 +37,7 @@ module.exports = {
             library: { type: "var", name: "Restaurant" },
             filename: "remoteEntry.js", //bundle
             exposes: { //외부연결
-                "./Restaurant": "./src/Restaurant/index",
-                "./List": "./src/Restaurant/List/view/ListContainer", //index name
-                "./Detail": "./src/Restaurant/Detail/view/DetailContainer",//
-                './Sample' : "./src/Restaurant/Detail/store/DetailKeeper",
-                './Sample1' : "./src/Restaurant/Detail/store/Sample"
+
             },
             shared: {
                 ...deps,
